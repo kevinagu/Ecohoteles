@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @ingreso.producto %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ingreso.user %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @ingreso.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_ingreso_path(@ingreso) %> |
+<%= link_to 'Back', ingresos_path %>

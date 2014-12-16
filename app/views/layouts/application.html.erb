@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecohoteles</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Administración Ecohoteles</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+  		<% if user_signed_in? %>
+	      <li class="has-dropdown">
+	        <a href="#"><%= current_user.email %></a>
+	        
+		        <ul class="dropdown">
+		          <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+		      	
+		        </ul>
+		     
+	      </li>
+	    <% end %>
+    </ul>
+</nav>
+
+<div class="row">
+	<% if user_signed_in? %>
+	  <div class="small-2 columns">
+	  	<div class="icon-bar vertical five-up">
+	  <a class="item">
+	    <img src="../assets/img/images/fi-home.svg" >
+	    <label>Home</label>
+	    <%= link_to "home",welcome_index_path%>
+	  </a>
+	  <a class="item">
+	    <img src="../assets/img/images/fi-bookmark.svg" >
+	    <label>Bar</label>
+	  </a>
+	  <a class="item">
+	    <img src="../assets/img/images/fi-info.svg" >
+	    <label>Ropas Blancas</label>
+	  </a>
+	  <a class="item">
+	    <img src="../assets/img/images/fi-mail.svg" >
+	    <label>Restaurante</label>
+	  </a>
+	 
+	</div>
+	  </div>
+<% end %>
+  <div class="small-10 columns">
+  	<%= yield %>
+  </div>
+</div>
+
+
+</body>
+</html>

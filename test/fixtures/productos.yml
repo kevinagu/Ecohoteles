@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  marca: MyString
+  umedida_id: 
+  pcosto: 1.5
+  pventa: 1.5
+  cantidad: 1.5
+  stock: 1
+  seccion_id: 
+
+two:
+  nombre: MyString
+  marca: MyString
+  umedida_id: 
+  pcosto: 1.5
+  pventa: 1.5
+  cantidad: 1.5
+  stock: 1
+  seccion_id: 

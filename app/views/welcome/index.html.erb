@@ -1,0 +1,33 @@
+<h1>Perfil de Usuario</h1>
+
+
+<p>
+  <h4>Nombre:</h4>
+  <h5>
+  <%= current_user.name %>
+  </h5>
+</p>
+   
+<h4>Productos prontos a agotarse:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Sección</th>
+  
+      <th width="150">Cantidad</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bar</td>
+      <td><%= @ag.length %></td>
+    </tr>
+    <tr>
+      <td>Ropas Blancas</td>
+      <td></td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,80 @@
+<%= form_for @producto, :html => {:multipart => true} do |f| %>
+  <% if @producto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
+
+      <ul>
+      <% @producto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="row">
+    <div class="large-9 columns">
+    <div class="field">
+      <%= f.label :nombre %><br>
+      <%= f.text_field :nombre %>
+    </div>
+    </div>
+    <div class="large-2 columns">
+    <div class="field">
+      <%= f.label :marca %><br>
+      <%= f.text_field :marca %>
+    </div>
+  </div>
+  </div>
+ <div class="row">
+    <div class="large-3 columns">
+    <div class="field">
+      <%= f.label :umedida_id %><br>
+      <%= f.collection_select :umedida_id, Umedida.all, :id ,:nombre%>
+    </div>
+    </div>
+    <div class="large-1 columns"><br></div>
+    
+    
+ 
+     <div class="large-3 columns">
+    <div class="field">
+      <%= f.label :foto %><br>
+      <%= f.file_field :foto %>
+    </div>
+    </div>
+    <div class="large-2 columns"><br></div>
+
+    <div class="large-3 columns">
+  <div class="field">
+    <%= f.label :seccion_id %><br>
+    <%= f.collection_select :seccion_id, Seccion.all, :id ,:nombre %>
+  </div>
+  </div>
+  </div>
+<div class="row">
+    
+
+  <div class="large-3 columns">
+  <div class="field">
+    <%= f.label :stock %><br>
+    <%= f.text_field :stock %>
+  </div>
+  </div>
+   <div class="large-1 columns"><br></div>
+  <div class="large-3 columns">
+  <div class="field">
+    <%= f.label :pcosto %><br>
+    <%= f.text_field :pcosto %>
+  </div>
+  </div>
+   <div class="large-2 columns"><br></div>
+  <div class="large-3 columns">
+  <div class="field">
+    <%= f.label :pventa %><br>
+    <%= f.text_field :pventa %>
+  </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </div>
+<% end %>

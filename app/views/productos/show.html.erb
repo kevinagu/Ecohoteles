@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <h1>
+    
+    <%= @producto.nombre+' ' +@producto.marca %>
+  </h1>
+</div>
+<div class="row">
+ <div class="large-4 columns">
+    
+  
+    <p>
+      <h6>Previo de Costo:</h6>
+      <%= @producto.pcosto %>
+    </p>
+
+    <p>
+      <h6>Precio de Venta:</h6>
+      <%= @producto.pventa %>
+    </p>
+
+    <p>
+      <h6>Cantidad:</h6>
+      <%= @producto.cantidad %>
+    </p>
+
+    <p>
+      <h6>Unidad de Medida:</h6>
+      <%= @producto.umedida.nombre %>
+    </p>
+
+
+    <p>
+      <h6>Stock Minimo:</h6>
+      <%= @producto.stock %>
+    </p>
+
+    <p>
+      <h6>Seccion:</h6>
+      <%= @producto.seccion.nombre %>
+    </p>
+  </div>
+  <div class="large-8 columns">
+    <p>
+      
+      <%= image_tag(@producto.foto, :width => 200, :class=>"th") if @producto.foto.present? %>
+    </p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_producto_path(@producto),  :class => "button secondary"%> 
+<%= link_to 'Atras', productos_path,  :class => "button secondary" %>

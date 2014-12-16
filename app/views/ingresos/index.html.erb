@@ -1,0 +1,33 @@
+<h1>Listing ingresos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>User</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingresos.each do |ingreso| %>
+      <tr>
+        <td><%= ingreso.producto.nombre %></td>
+        <td><%= ingreso.user %></td>
+        <td><%= ingreso.cantidad %></td>
+        <td><%= link_to 'Show', ingreso %></td>
+        <% if can? :update, ingreso %>
+          <td><%= link_to 'Edit', edit_ingreso_path(ingreso) %></td>
+        <% end %>
+        <% if can? :destroy, ingreso %>
+          <td><%= link_to 'Destroy', ingreso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ingreso', new_ingreso_path %>

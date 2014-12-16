@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @salida.producto %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @salida.user %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @salida.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_salida_path(@salida) %> |
+<%= link_to 'Back', salidas_path %>
