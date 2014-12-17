@@ -12,7 +12,7 @@ end
 
 gem 'devise'
 gem "cancan"
-
+gem 'carrierwave', group: :production
 gem 'foundation-rails'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 # Use SCSS for stylesheets
