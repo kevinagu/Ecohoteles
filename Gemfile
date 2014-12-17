@@ -16,6 +16,8 @@ gem 'carrierwave'
 gem 'foundation-rails'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 # Use SCSS for stylesheets
+gem 'rails_12factor', group: :production
+
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

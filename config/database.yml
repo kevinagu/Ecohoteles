@@ -18,7 +18,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: postgres://wappqbriayuwua:8bg4gGPo6hYWtZPgAp1aZOGwiE@ec2-54-225-255-208.compute-1.amazonaws.com:5432/df8rm5almjodld
 
 production:
   <<: *default
