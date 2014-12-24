@@ -11,7 +11,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Administración Ecohoteles</a></h1>
+      <h1><%= link_to "Administración Ecohoteles",welcome_index_path%></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -38,30 +38,38 @@
 	<% if user_signed_in? %>
 	  <div class="small-2 columns">
 	  	<div class="icon-bar vertical five-up">
-	  <a class="item">
-	    <img src="../assets/img/images/fi-home.svg" >
-	    <label>Home</label>
-	    <%= link_to "home",welcome_index_path%>
-	  </a>
-	  <a class="item">
-	    <img src="../assets/img/images/fi-bookmark.svg" >
-	    <label>Bar</label>
-	  </a>
-	  <a class="item">
-	    <img src="../assets/img/images/fi-info.svg" >
-	    <label>Ropas Blancas</label>
-	  </a>
-	  <a class="item">
-	    <img src="../assets/img/images/fi-mail.svg" >
-	    <label>Restaurante</label>
-	  </a>
+	  <p class="item">
+	    <%= image_tag "homee.png", :alt => ""%>
+	   
+	    <%= link_to "Home",welcome_index_path%>
+	  </p>
+	  <p class="item">
+	    <%= image_tag "bar.png", :alt => ""%>
+	    
+	    <%= link_to "Bar",productos_path%>
+	  </p>
+	  <p class="item">
+	   <%= image_tag "cloth.png", :alt => ""%>
+	    <%= link_to "Ropas Blancas",ropas_path%>
+	  </p>
+	 
 	 
 	</div>
 	  </div>
 <% end %>
+<% if user_signed_in? %>
   <div class="small-10 columns">
   	<%= yield %>
   </div>
+<% else %>
+  <div class="row">
+  	<div class="small-3 columns"><br></div>
+	  <div class="small-6 columns">
+	  	<%= yield %>
+	  </div>
+	 <div class="small-3 columns"><br></div>
+  	
+<% end %>
 </div>
 
 

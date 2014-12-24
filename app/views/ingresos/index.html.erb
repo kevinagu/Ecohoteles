@@ -14,7 +14,7 @@
     <% @ingresos.each do |ingreso| %>
       <tr>
         <td><%= ingreso.producto.nombre %></td>
-        <td><%= ingreso.user %></td>
+        <td><%= ingreso.user.email %></td>
         <td><%= ingreso.cantidad %></td>
         <td><%= link_to 'Show', ingreso %></td>
         <% if can? :update, ingreso %>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Ingreso', new_ingreso_path %>
+<%= link_to 'Nuevo Ingreso', new_ingreso_path %>

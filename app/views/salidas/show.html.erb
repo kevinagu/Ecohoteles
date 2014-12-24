@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Producto:</strong>
-  <%= @salida.producto %>
+  <h6>Producto:</h6>
+  <%= @salida.producto.nombre %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @salida.user %>
+  <h6>User:</h6>
+  <%= @salida.user.email %>
 </p>
 
 <p>
-  <strong>Cantidad:</strong>
+  <h6>Cantidad:</h6>
   <%= @salida.cantidad %>
 </p>
 
-<%= link_to 'Edit', edit_salida_path(@salida) %> |
-<%= link_to 'Back', salidas_path %>
+<%= link_to 'Editar', edit_salida_path(@salida),  :class => "button secondary" %> 
+<%= link_to 'Atras', salidas_path,  :class => "button secondary" %>

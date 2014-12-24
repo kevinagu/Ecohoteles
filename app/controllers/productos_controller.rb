@@ -7,7 +7,7 @@ class ProductosController < ApplicationController
     if params[:query]
       @productos = Producto.search(params[:query]).order("nombre ASC")
     else
-      @productos = Producto.all
+      @productos = Producto.where(:seccion_id => 1)
     end
     
     @agotados = Producto.where('cantidad < stock')

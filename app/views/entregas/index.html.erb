@@ -1,0 +1,35 @@
+<h1>Lista de Entregas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ropa</th>
+      <th>Cantidad</th>
+      <th>Rotas</th>
+      <th>Manchada</th>
+      <th>Destino</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entregas.each do |entrega| %>
+      <tr>
+        <td><%= entrega.ropa.nombre %></td>
+        <td><%= entrega.cantidad %></td>
+        <td><%= entrega.rotas %></td>
+        <td><%= entrega.manchada %></td>
+        <td><%= entrega.destino.nombre %></td>
+        <td><%= entrega.user.email %></td>
+        <td><%= link_to 'Mostrar', entrega %></td>
+        <td><%= link_to 'Editar', edit_entrega_path(entrega) %></td>
+        <td><%= link_to 'Eliminar', entrega, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Entrega', new_entrega_path,  :class => "button secondary" %>

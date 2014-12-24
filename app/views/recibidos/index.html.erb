@@ -1,0 +1,35 @@
+<h1>Lista de Recibidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ropa</th>
+      <th>Cantidad</th>
+      <th>Rotas</th>
+      <th>Manchada</th>
+      <th>Procedencia</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recibidos.each do |recibido| %>
+      <tr>
+        <td><%= recibido.ropa.nombre %></td>
+        <td><%= recibido.cantidad %></td>
+        <td><%= recibido.rotas %></td>
+        <td><%= recibido.manchada %></td>
+        <td><%= recibido.procedencia.nombre %></td>
+        <td><%= recibido.user.email %></td>
+        <td><%= link_to 'Mostrar', recibido %></td>
+        <td><%= link_to 'Editar', edit_recibido_path(recibido) %></td>
+        <td><%= link_to 'Eliminar', recibido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Recibido', new_recibido_path,  :class => "button secondary" %>

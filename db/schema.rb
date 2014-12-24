@@ -11,13 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211031251) do
+ActiveRecord::Schema.define(version: 20141222083233) do
 
   create_table "cargos", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "destinos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "entregas", force: true do |t|
+    t.integer  "ropa_id"
+    t.integer  "cantidad"
+    t.integer  "rotas"
+    t.integer  "manchada"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "destino_id"
+  end
+
+  add_index "entregas", ["destino_id"], name: "index_entregas_on_destino_id"
+  add_index "entregas", ["ropa_id"], name: "index_entregas_on_ropa_id"
+  add_index "entregas", ["user_id"], name: "index_entregas_on_user_id"
 
   create_table "ingresos", force: true do |t|
     t.integer  "producto_id"
@@ -29,6 +50,12 @@ ActiveRecord::Schema.define(version: 20141211031251) do
 
   add_index "ingresos", ["producto_id"], name: "index_ingresos_on_producto_id"
   add_index "ingresos", ["user_id"], name: "index_ingresos_on_user_id"
+
+  create_table "procedencia", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "productos", force: true do |t|
     t.string   "nombre"
@@ -46,6 +73,31 @@ ActiveRecord::Schema.define(version: 20141211031251) do
 
   add_index "productos", ["seccion_id"], name: "index_productos_on_seccion_id"
   add_index "productos", ["umedida_id"], name: "index_productos_on_umedida_id"
+
+  create_table "recibidos", force: true do |t|
+    t.integer  "ropa_id"
+    t.integer  "cantidad"
+    t.integer  "rotas"
+    t.integer  "manchada"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "procedencia_id"
+  end
+
+  add_index "recibidos", ["procedencia_id"], name: "index_recibidos_on_procedencia_id"
+  add_index "recibidos", ["ropa_id"], name: "index_recibidos_on_ropa_id"
+  add_index "recibidos", ["user_id"], name: "index_recibidos_on_user_id"
+
+  create_table "ropas", force: true do |t|
+    t.string   "nombre"
+    t.integer  "rotas"
+    t.integer  "manchada"
+    t.integer  "cantidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "disponible"
+  end
 
   create_table "salidas", force: true do |t|
     t.integer  "producto_id"

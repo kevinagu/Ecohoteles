@@ -1,6 +1,8 @@
-<h1>Editing ingreso</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @ingreso %> |
-<%= link_to 'Back', ingresos_path %>
+<h1>Edicion de ingreso</h1>
+<div class="row">
+	<%= render 'form' %>
+</div>
+<div>
+	<%= link_to 'Mostrar', @ingreso,  :class => "button secondary" %> 
+	<%= link_to 'Atras', ingresos_path,  :class => "button secondary" %>
+</div>

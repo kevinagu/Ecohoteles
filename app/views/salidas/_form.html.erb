@@ -10,20 +10,21 @@
       </ul>
     </div>
   <% end %>
+  <div class="large-4 columns">
+    
+    <div class="field">
+      <%= f.label :producto_id %><br>
+      <%= f.collection_select :producto_id, Producto.all, :id ,:nombre %>
+   </div>
+      
+    <div class="field">
+      <%= f.label :cantidad %><br>
+      <%= f.text_field :cantidad %>
+    </div>
+     <div class="actions">
+      <%= f.submit %>
+     </div>
 
-  <div class="field">
-    <%= f.label :producto_id %><br>
-    <%= f.text_field :producto_id %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :cantidad %><br>
-    <%= f.text_field :cantidad %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="large-8 columns"><br></div>
 <% end %>

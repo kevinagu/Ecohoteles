@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1>
+  <%= @ropa.nombre %>
+  </h1>
+</p>
+
+
+
+<p>
+  <h6>Rotas:</h6>
+  <%= @ropa.rotas %>
+</p>
+
+<p>
+  <h6>Manchada:</h6>
+  <%= @ropa.manchada %>
+</p>
+
+<p>
+  <h6>Disponible:</h6>
+  <%= @ropa.disponible %>
+</p>
+
+<p>
+  <h6>Cantidad:</h6>
+  <%= @ropa.cantidad %>
+</p>
+
+<%= link_to 'Editar', edit_ropa_path(@ropa),  :class => "button secondary" %> 
+<%= link_to 'Atras', ropas_path,  :class => "button secondary" %>

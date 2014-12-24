@@ -21,8 +21,9 @@ class IngresosController < ApplicationController
   end
 
   def create
+    params[:ingreso][:user_id]=current_user.id
     @ingreso = Ingreso.new(ingreso_params)
-    @ingreso.user_id=current_user
+    
     @producto = Producto.find(params[:ingreso][:producto_id])
     cantidad = params[:ingreso][:cantidad]
     @producto.cantidad = @producto.cantidad.to_f + cantidad.to_f
@@ -55,6 +56,8 @@ class IngresosController < ApplicationController
     end
 
     def ingreso_params
+      user_id=
       params.require(:ingreso).permit(:producto_id, :user_id, :cantidad)
+
     end
 end

@@ -1,0 +1,41 @@
+<%= form_for(@entrega) do |f| %>
+  <% if @entrega.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrega.errors.count, "error") %> prohibited this entrega from being saved:</h2>
+
+      <ul>
+      <% @entrega.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ropa_id %><br>
+    <%= f.text_field :ropa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :rotas %><br>
+    <%= f.number_field :rotas %>
+  </div>
+  <div class="field">
+    <%= f.label :manchada %><br>
+    <%= f.number_field :manchada %>
+  </div>
+  <div class="field">
+    <%= f.label :destino %><br>
+    <%= f.text_field :destino %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

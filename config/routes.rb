@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'adicion/ingreso'
+
+  resources :entregas
+
+  resources :recibidos
+
+  resources :ropas
+
   get 'welcome/index'
 
   resources :salidas

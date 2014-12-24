@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Producto:</strong>
-  <%= @ingreso.producto %>
+  <h6>Producto:</h6>
+  <%= @ingreso.producto.nombre %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @ingreso.user %>
+  <h6>User:</h6>
+  <%= @ingreso.user.email %>
 </p>
 
 <p>
-  <strong>Cantidad:</strong>
+  <h6>Cantidad:</h6>
   <%= @ingreso.cantidad %>
 </p>
 
-<%= link_to 'Edit', edit_ingreso_path(@ingreso) %> |
-<%= link_to 'Back', ingresos_path %>
+<%= link_to 'Editar', edit_ingreso_path(@ingreso),  :class => "button secondary" %> 
+<%= link_to 'Atras', ingresos_path,  :class => "button secondary" %>

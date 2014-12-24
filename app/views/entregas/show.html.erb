@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h6>Ropa:</h6>
+  <%= @entrega.ropa.nombre %>
+</p>
+
+<p>
+  <h6>Cantidad:</h6>
+  <%= @entrega.cantidad %>
+</p>
+
+<p>
+  <h6>Rotas:</h6>
+  <%= @entrega.rotas %>
+</p>
+
+<p>
+  <h6>Manchada:</h6>
+  <%= @entrega.manchada %>
+</p>
+
+<p>
+  <h6>Destino:</h6>
+  <%= @entrega.destino.nombre %>
+</p>
+
+<p>
+  <h6>User:</h6>
+  <%= @entrega.user.email %>
+</p>
+
+<%= link_to 'Editar', edit_entrega_path(@entrega),  :class => "button secondary" %> |
+<%= link_to 'Atras', entregas_path,  :class => "button secondary" %>

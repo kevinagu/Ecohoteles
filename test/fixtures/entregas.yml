@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ropa_id: 
+  cantidad: 1
+  rotas: 1
+  manchada: 1
+  destino: MyString
+  user_id: 
+
+two:
+  ropa_id: 
+  cantidad: 1
+  rotas: 1
+  manchada: 1
+  destino: MyString
+  user_id: 

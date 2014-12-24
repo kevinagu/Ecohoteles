@@ -34,7 +34,7 @@
       <th>Pventa ($)</th>
       <th>Cantidad</th>
       <th>Stock</th>
-      <th>Seccion</th>
+     
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -50,7 +50,7 @@
         <td><%= producto.pventa %></td>
         <td><%= producto.cantidad %></td>
         <td><%= producto.stock %></td>
-        <td><%= producto.seccion.nombre %></td>
+   
         <td><%= link_to 'Mostrar', producto %></td>
         <% if can? :update, producto %>
           <td><%= link_to 'Editar', edit_producto_path(producto) %></td>

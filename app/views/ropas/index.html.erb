@@ -1,0 +1,35 @@
+<h1>Ropas Blancas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+
+      <th>Rotas</th>
+      <th>Manchada</th>
+      <th>Disponible</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ropas.each do |ropa| %>
+      <tr>
+        <td><%= ropa.nombre %></td>
+
+        <td><%= ropa.rotas %></td>
+        <td><%= ropa.manchada %></td>
+        <td><%= ropa.disponible %></td>
+        <td><%= ropa.cantidad %></td>
+        <td><%= link_to 'Mostrar', ropa %></td>
+        <td><%= link_to 'Editar', edit_ropa_path(ropa) %></td>
+        <td><%= link_to 'Eliminar', ropa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Ropa Blanca', new_ropa_path,  :class => "button secondary" %>

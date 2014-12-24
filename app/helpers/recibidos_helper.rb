@@ -1,0 +1,2 @@
+module RecibidosHelper
+end

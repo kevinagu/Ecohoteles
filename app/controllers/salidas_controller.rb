@@ -21,6 +21,7 @@ class SalidasController < ApplicationController
   end
 
   def create
+    params[:salida][:user_id]=current_user.id
     @salida = Salida.new(salida_params)
     @producto = Producto.find(params[:salida][:producto_id])
     cantidad = params[:salida][:cantidad]
